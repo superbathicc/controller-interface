@@ -14,8 +14,8 @@ let page;
 
 (async () => {
 	let browser = await puppeteer.launch({headless: false, defaultViewport: null});
-	page = await browser.newPage();
-	await page.goto('https://10fastfingers.com/typing-test/german');		
+	page = await browser.newPage();	
+	await page.goto('http://localhost:3003/');		
 })()
 .catch(err => console.error(err));
 
@@ -77,7 +77,6 @@ function onMessage(data){
 							page.keyboard.press('f').catch(err=> console.log(err));
 						}
 						if(con.contr2.some(x => x === 0) && prev[1][0]!= 1){
-							console.log("1")
 							page.keyboard.press('1').catch(err=> console.log(err));
 						}
 						if(con.contr2.some(x => x === 1) && prev[1][1]!= 1){
@@ -88,15 +87,10 @@ function onMessage(data){
 						}
 						if(con.contr2.some(x => x === 3) && prev[1][3]!= 1){
 							page.keyboard.press('4').catch(err=> console.log(err));
-						}
-					
+						}					
 					}
-				}
-
-			
-			}
-					
-		
+				}			
+			}		
 		}
 		prev = controller;
 	}
@@ -106,28 +100,3 @@ function onMessage(data){
 	
 	prev = controller;
 }
-
-/*
-
-function start(){
-	port.write('a', (err) => {
-		if (err) {
-			return console.log('Error on write: ', err.message);
-		}
-		port.pipe(parser);
-		parser.on('data', onMessage);
-		console.log('message written');
-	});
-}
- 
-function stop(){
-	port.write('b', (err) => {
-		if (err) {
-			return console.log('Error on write: ', err.message);
-		}
-		SerialPort.close();
-		console.log('message written');
-	});
-}
-start()
-*/
