@@ -1,0 +1,24 @@
+{
+  "name": "controller-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "serialport.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superbathicc/controller-interface.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/superbathicc/controller-interface/issues"
+  },
+  "homepage": "https://github.com/superbathicc/controller-interface#readme",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "puppeteer": "^1.19.0",
+    "serialport": "^7.1.5"
+  }
+}
