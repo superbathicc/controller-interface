@@ -56,7 +56,7 @@ function onMessage(data){
 		if(!eq){
 			let con = getChange(controller[0],controller[1])
 
-			// if(con != "")
+			 if(con != "")
 				
 				if(typeof page === 'object' && page !== null) {
 					if(typeof page.evaluate === 'function') {
@@ -64,18 +64,21 @@ function onMessage(data){
 
 						console.log(con)
 						console.log(prev)
+						if(con.contr1.length > 0){
 						if(con.contr1.some(x => x === 0) && prev[0][0]!= 1){
 							page.keyboard.press('a').catch(err=> console.log(err));
 						}
 						if(con.contr1.some(x => x === 1) && prev[0][1]!= 1){
-							page.keyboard.press('s').catch(err=> console.log(err));
+							page.keyboard.press('b').catch(err=> console.log(err));
 						}
 						if(con.contr1.some(x => x === 2) && prev[0][2]!= 1){
-							page.keyboard.press('d').catch(err=> console.log(err));
+							page.keyboard.press('c').catch(err=> console.log(err));
 						}
 						if(con.contr1.some(x => x === 3) && prev[0][3]!= 1){
-							page.keyboard.press('f').catch(err=> console.log(err));
+							page.keyboard.press('d').catch(err=> console.log(err));
 						}
+						}
+						if(con.contr2.length > 0){
 						if(con.contr2.some(x => x === 0) && prev[1][0]!= 1){
 							page.keyboard.press('1').catch(err=> console.log(err));
 						}
@@ -87,7 +90,8 @@ function onMessage(data){
 						}
 						if(con.contr2.some(x => x === 3) && prev[1][3]!= 1){
 							page.keyboard.press('4').catch(err=> console.log(err));
-						}					
+						}	
+						}						
 					}
 				}			
 			}		
@@ -100,3 +104,28 @@ function onMessage(data){
 	
 	prev = controller;
 }
+
+/*
+
+function start(){
+	port.write('a', (err) => {
+		if (err) {
+			return console.log('Error on write: ', err.message);
+		}
+		port.pipe(parser);
+		parser.on('data', onMessage);
+		console.log('message written');
+	});
+}
+ 
+function stop(){
+	port.write('b', (err) => {
+		if (err) {
+			return console.log('Error on write: ', err.message);
+		}
+		SerialPort.close();
+		console.log('message written');
+	});
+}
+start()
+*/
