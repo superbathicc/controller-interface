@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/superbathicc/controller-interface#readme",
   "dependencies": {
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "puppeteer": "^1.19.0",
     "serialport": "^7.1.5"
   }
